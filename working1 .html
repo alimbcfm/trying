@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head >
+    <meta charset="utf-8"/>
+    <meta name="descripion" content=" learn English"/>
+    <title> ادارة الحسابات </title>
+    <link rel="stylesheet" href="working.css">
+</head>
+<body>
+  
+    <div id="d1">
+      <center> <h1>مرحبا بكم في برنامج المحاسبه</h1></center>
+      <center> <h1>شركة العسيري للسفر والسياحه</h1></center>
+
+      <section class="front">
+        <button id="d111">تسجيل جديد</button>
+        <button class="seacrh">بحــــث</button>  
+        <button id="d333">قائمـــه</button>  
+        <br>
+        <button>الصفحه الرئيسيه</button>
+  
+         
+      </section>
+    </div>
+      <div id="d2">
+    
+    <section>
+      <input type="text" dir="rtl" required>
+      <label>  اسم العميل</label>
+      <br>
+      <br>
+      <input type="number" dir="rtl" required>
+      <label>  رقم الهويه او الاقامه</label>
+      <br>
+      <br>
+      <input type="text" dir="rtl" required>
+      <label> اسم المنتج</label>
+      <br>
+      <br>
+      <input type="number" dir="rtl" required>
+      <label> سعر المنتج</label>
+      <br>
+      <br>
+      <input type="number" dir="rtl" required>
+      <label> المقدم</label>
+      <br>
+      <br>
+      <input type="number" dir="rtl" required>
+      <label> مبلغ القسط </label>
+      <br>
+      <br>
+      <button id="d222">الصفحه الرئيسيه</button>
+      <button class="delete">حذف</button>
+      <button class="edit">تعديل</button>
+      <button class="save">حفظ</button>
+
+    </section>
+  </div>
+  <div id="d3">
+    
+    <section>
+      <table border ="1" dir="rtl">
+        <tr> <th> اســـــم العميل </th> <th> رقم الهويه او الاقامه  </th> <th>    اســـم المنتج  </th><th> سعــر المنتج </th> <th>المقدم</th><th>مــبلغ القسط   </th><th> المدفوع</th><th>المتبقي</th></tr>
+        <tr> <td>علي عبدالله عسيري</td><td>1234567892</td><td>مكيف</td><td>3000</td><td>300</td><td>350</td><td>000</td><td>000</td></tr>
+        <tr><td>محمد الزهراني </td><td>1234567892</td><td>مكنسه</td><td>4000</td><td>400</td><td>450</td><td>000</td><td>000</td></tr>
+        <tr><td>فيصل الغامدي</td><td>1234567892</td><td>شاشه</td><td>5000</td><td>500</td><td>550</td><td>000</td><td>000</td></tr>
+    
+    </table>  
+    <button id="dd333">الصفحه الرئيسيه</button>
+
+    </section>
+  </div>
+
+  <div id="d4">
+    
+     
+    <button id="dd333">الصفحه الرئيسيه</button>
+    <title>إضافة بيانات إلى جدول</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>جدول البيانات</h2>
+<table id="dataTable">
+<input type="text" id="name" placeholder="ffالاسم">
+<br>
+<input type="number" id="age" placeholder="العمر">
+<br>
+
+<input type="text" id="city" placeholder="المدينة">
+<button id="addButton">إضافة بيانات</button>
+<br>
+    <thead>
+        <tr>
+            <th>الاسم</th>
+            <th>العمر</th>
+            <th>المدينة</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- الصفوف ستضاف هنا -->
+    </tbody>
+</table>
+
+<br>
+
+
+<script>
+    // وظيفة لإضافة صف جديد إلى الجدول
+    document.getElementById('addButton').addEventListener('click', function() {
+        const name = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+        const city = document.getElementById('city').value;
+
+        // التأكد من عدم وجود حقول فارغة
+        if (name === '' || age === '' || city === '') {
+            alert('يرجى ملء جميع الحقول!');
+            return;
+        }
+
+        // الحصول على جسم الجدول
+        const tableBody = document.getElementById('dataTable').getElementsByTagName('tbody')[0];
+
+        // إنشاء صف جديد
+        const newRow = tableBody.insertRow();
+
+        // إضافة خلايا إلى الصف الجديد
+        const nameCell = newRow.insertCell(0);
+        const ageCell = newRow.insertCell(1);
+        const cityCell = newRow.insertCell(2);
+
+        // ملء الخلايا بالبيانات المدخلة
+        nameCell.textContent = name;
+        ageCell.textContent = age;
+        cityCell.textContent = city;
+
+        // مسح الحقول بعد الإضافة
+        document.getElementById('name').value = '';
+        document.getElementById('age').value = '';
+        document.getElementById('city').value = '';
+    });
+</script>
+
+  </div>
+  
+  <script src="javascript.js">
+    
+
+  </script>
+ 
+</body>
+</html>
